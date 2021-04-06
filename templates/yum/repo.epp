@@ -1,0 +1,11 @@
+<%-|
+  Hash $repos,
+|-%>
+# This file is managed by Puppet. Local changes will be overwritten and lost.
+
+<%- $repos.each |$repo_title, $repo_params| { %>
+[<%= $repo_title %>]
+<%- $repo_params.each |$param_key, $param_value| { -%>
+<%= $param_key %>=<%= $param_value %>
+<%- } -%>
+<%- } -%>
